@@ -1,0 +1,9 @@
+\c cicsrdo
+select transaction, rdogroup, program, remotesystem, remotename
+from transaction
+where	(program <> ' ' and remotename <> ' ') or
+	(program <> ' ' and remotesystem <> ' ') or
+	(program = ' ' and remotename = ' ') or
+	(program = ' ' and remotesystem = ' ') or
+	(remotename <> ' ' and remotesystem = ' ') or
+	(remotename = ' ' and remotesystem <> ' ');
